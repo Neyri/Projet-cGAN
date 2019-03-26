@@ -73,7 +73,7 @@ optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=lr, betas=(b1, b2)
 transforms_ = [ transforms.Resize((img_height, img_width), Image.BICUBIC),
                 transforms.ToTensor()] # transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)) 
 
-dataloader = DataLoader(ImageDataset("val", transforms_=transforms_),
+dataloader = DataLoader(ImageDataset("val", transforms_=transforms_), # TODO Change value of val : Hardcode
                         batch_size=16, shuffle=True)
 
 # Tensor type
@@ -150,3 +150,7 @@ for epoch in range(0, num_epochs):
     ## AFTER EACH EPOCH##
     # append discriminator loss and generator loss
     losses.append((loss_D.item(), loss_G.item()))
+    # Save
+
+torch.save(generator.state_dict(), '2nd_try_G.pth')
+torch.save(discriminator.state_dict(), '2nd_try_D.pth')
