@@ -65,7 +65,7 @@ def run(args):
     for i in range(n_display) :
         # Configure dataloaders
         transforms_ = [ transforms.Resize((img_height, img_width), Image.BICUBIC),
-                transforms.ToTensor()] # transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)) 
+                transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))]
 
         # Load data
         val_dataloader = DataLoader(ImageDataset(path, transforms_=transforms_, mode='val'),
