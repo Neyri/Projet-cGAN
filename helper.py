@@ -22,9 +22,8 @@ def plot2x2Array(image, mask):
 
 def reverse_transform(image):
     image = image.numpy().transpose((1, 2, 0))
-    image = np.clip(image, 0, 1)
-    image = (image * 255).astype(np.uint8)
-    
+    image = ((image+1)/2*255).astype(np.uint8)
+    image = np.clip(image, 0,255)    
     return image
 
 def plot2x3Array(image, mask,predict):
