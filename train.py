@@ -84,7 +84,7 @@ Tensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
 #  Training
 # ----------
 losses = []
-num_epochs = 200
+num_epochs = 100
 
 # train the network
 discriminator.train()

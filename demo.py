@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import imageio
 import glob
@@ -32,8 +31,8 @@ generator = GeneratorUNet()
 discriminator = Discriminator()
 
 # Load Gen and Discriminator
-generator.load_state_dict(torch.load('2nd_try_G.pth'))
-discriminator.load_state_dict(torch.load('2nd_try_D.pth'))
+generator.load_state_dict(torch.load('second_try_models_demo/2nd_try_G.pth', map_location='cpu'))
+discriminator.load_state_dict(torch.load('second_try_models_demo/2nd_try_D.pth', map_location='cpu'))
 
 # Eval mode
 discriminator.eval()
@@ -80,6 +79,7 @@ def run(args):
         mask = reverse_transform(mask[i])
         if  do_store == False:
             plot2x3Array(image, mask,output)
+            
         else:
             print('Data stored in folder abc')
 
@@ -96,5 +96,3 @@ def main():
 
 if __name__=="__main__":
 	main()
-
-

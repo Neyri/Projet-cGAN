@@ -19,6 +19,7 @@ def plot2x2Array(image, mask):
 
     axarr[0].set_title('Image')
     axarr[1].set_title('Mask')
+    plt.show()
 
 def reverse_transform(image):
     image = image.numpy().transpose((1, 2, 0))
@@ -35,3 +36,4 @@ def plot2x3Array(image, mask,predict):
     axarr[0].set_title('input')
     axarr[1].set_title('real')
     axarr[2].set_title('fake')
+    plt.show()
