@@ -59,8 +59,8 @@ checkpoint_interval = -1 # interval between model checkpoints
 def run(args):
     path = args.path 
     n_display = args.n_display
-    do_store = args.do_store
-    output = args.output
+    do_save = args.do_save
+
 
     for i in range(n_display) :
         # Configure dataloaders
@@ -77,19 +77,18 @@ def run(args):
         image = reverse_transform(image[i])
         output = reverse_transform(output[i])
         mask = reverse_transform(mask[i])
-        if  do_store == False:
+        if  do_save is None:
             plot2x3Array(image, mask,output)
-            
         else:
-            print('Data stored in folder abc')
+            plot2x3Array(image, mask,output,True,do_save,"image"+str(i))
+            print('Data stored in folder: {}'.format(do_save))
 
 
 def main():
     parser=argparse.ArgumentParser(description="generate results from trained cGAN")
     parser.add_argument("-in",help="path to input file" ,dest="path", type=str,required=True)
     parser.add_argument("-n",help="number of data to display" ,dest="n_display",type=int, default=1)
-    parser.add_argument("-s",help="store the data on a specific folder",dest="do_store",type=bool,default=False)
-    parser.add_argument("-out",help="output filename",dest="output",type=str,required=False)
+    parser.add_argument("--save",help="store the data on a specific folder",dest="do_save",type=str,default=None)
     parser.set_defaults(func=run)
     args=parser.parse_args()
     args.func(args)
