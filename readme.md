@@ -11,7 +11,7 @@ This can be done by pasting the following command on your terminal:
 ##### File Permissions
 
 Make the script executable the first time you run it:
-- `chmod +x fasta_to_fastq.py`
+- `chmod +x demo.py`
 
 
 ##### Options
