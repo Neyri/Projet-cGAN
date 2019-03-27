@@ -1,4 +1,6 @@
 # Projet c-GAN
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 Welcome to the C-GAN Project
 
 ## Getting started
