@@ -25,14 +25,14 @@ import torch
 from helper import *
 from model import *
 from datasets import *
-
+from env import *
 # Initialize generator and discriminator
 generator = GeneratorUNet()
 discriminator = Discriminator()
 
 # Load Gen and Discriminator
-generator.load_state_dict(torch.load('second_try_models_demo/2nd_try_G.pth', map_location='cpu'))
-discriminator.load_state_dict(torch.load('second_try_models_demo/2nd_try_D.pth', map_location='cpu'))
+generator.load_state_dict(torch.load(GENERATOR_PATH, map_location='cpu'))
+discriminator.load_state_dict(torch.load(DISCRIMINATOR_PATH, map_location='cpu'))
 
 # Eval mode
 discriminator.eval()
