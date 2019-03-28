@@ -14,6 +14,7 @@ Create a file named `env.py` in the project root dir. Inside it set the followin
 - `DISCRIMINATOR_PATH` — the path from root directory to the discriminator .pth file
 - `GENERATOR_PATH` — the path from root directory to the generator .pth file
 
+Create a directory containing the inputs in the project root dir.
 
 ##### File Permissions
 
