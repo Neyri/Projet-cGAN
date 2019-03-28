@@ -38,8 +38,8 @@ def plot2x3Array(image, mask,predict, save=False,direc = None, fname= None):
     axarr[0].imshow(image)
     axarr[1].imshow(mask)
     axarr[2].imshow(predict)
-    axarr[0].set_title('input')
-    axarr[1].set_title('real')
+    axarr[0].set_title('real')
+    axarr[1].set_title('input')
     axarr[2].set_title('fake')
     if save != True:
         plt.show()
