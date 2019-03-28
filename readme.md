@@ -8,17 +8,23 @@ Make sure you have PyTorch installed on your virtual environment.
 This can be done by pasting the following command on your terminal: 
 - `python -c "import torch; print(torch.__version__)"`
 
+##### Configure your `env.py`
+Create a file named `env.py` in the project root dir. Inside it set the following environment variables: 
+
+- `DISCRIMINATOR_PATH` — the path from root directory to the discriminator .pth file
+- `GENERATOR_PATH` — the path from root directory to the generator .pth file
+
+
 ##### File Permissions
 
 Make the script executable the first time you run it:
 - `chmod +x demo.py`
 
 
-##### Options
+##### Commands
 - `-h` — show this help message and exit
 - `-in` — path to input file
 
-##### Commands
+##### Options
 - `-n` — number of data to display, 1 by default
-- `-s` — store the data on a specific folder, False by default
-- `-out` — output filename, non existent by default
+- `--save` — store the data on a specific folder, False by default
